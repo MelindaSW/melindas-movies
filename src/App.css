@@ -7,53 +7,110 @@
 
 .App {
   text-align: center;
+  background-color: #282c34;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App-header {
+  min-height: 40vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: whitesmoke;
+  background-image: url(https://img.freepik.com/free-photo/movie-background-collage_23-2149876003.jpg);
+  background-size: cover;
+}
+.star {
+  color: yellow;
+  margin: 10px;
 }
 
 p {
   margin: 20px 0px;
 }
 
-.header {
+.header,
+.title {
   font-size: 3rem;
 }
 
+.title {
+  margin: 10%;
+}
+
 .body {
-  margin: 20px 0 10px;
   font-size: 0.9rem;
+  background-color: #282c34;
+  color: aliceblue;
+  box-shadow: 13px -1px 54px 8px rgb(248, 248, 248);
+  padding-bottom: 5px;
+}
+
+button,
+input,
+select {
+  font-size: calc(10px + 1.5vmin);
+  /* margin-top: 1%; */
+  padding: 2px;
+  border-radius: 5px;
+}
+
+label {
+  margin: 0.6rem;
+  font-size: 1rem;
 }
 
 button {
   outline: none;
   border: none;
-  border-radius: 8px;
   padding: 10px 35px;
-
-  background: #845ec2;
+  background: #324e68;
   color: white;
+  margin-top: 1rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+ul {
+  list-style: none;
+  margin-top: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.Search-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  padding-top: 5vh;
+}
 
-  background: var(--bg-primay);
-  color: var(--primay);
+.Movie-card-container {
+  width: 100%;
+  font-size: large;
+}
+
+.Movie-card {
+  padding: 10px;
+  border: 1px dotted white;
+  margin: 10px;
+  background-color: #8392b3;
+  box-shadow: 4px 4px 30px -8px rgb(248, 248, 248);
+  border-radius: 10px;
+  color: aliceblue;
+  height: 100%;
+}
+
+footer {
+  color: white;
+  background-image: url(https://img.freepik.com/free-photo/movie-background-collage_23-2149876003.jpg);
+  background-size: cover;
+  height: 10vh;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .App-link {
@@ -61,15 +118,17 @@ button {
   color: var(--link);
 }
 
-@keyframes App-logo-spin {
+/* @media (prefers-reduced-motion: no-preference) {
+  .star {
+    animation: App-logo-spin infinite 20s linear;
+  }
+} */
+
+/* @keyframes star {
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
   }
-}
-
-button {
-  font-size: calc(10px + 2vmin);
-}
+} */

@@ -1,0 +1,13 @@
+https://www.omdbapi.com/
+
+&apikey=796f0e08
+http://www.omdbapi.com/?apikey=[yourkey]&
+OMDb API: http://www.omdbapi.com/?i=tt3896198&apikey=796f0e08 
+Features: 
+
+search for movies 
+by name, year, id, 
+
+http://www.omdbapi.com/?t=Test&y=1986&plot=full 
+
+https://www.npmjs.com/package/react-responsive-masonry
