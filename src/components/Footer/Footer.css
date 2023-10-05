@@ -1,0 +1,11 @@
+footer {
+  color: white;
+  background-image: url(https://img.freepik.com/free-photo/movie-background-collage_23-2149876003.jpg);
+  background-size: cover;
+  height: 10vh;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: auto;
+}

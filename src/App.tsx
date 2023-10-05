@@ -3,11 +3,13 @@ import './App.css';
 import React, { FormEvent, useState } from 'react';
 
 import { searchMoviesByID, searchMoviesByTitle } from './apicalls/moviesapi';
+import Footer from './components/Footer/Footer';
+import SearchForm from './components/SearchForm/SearchForm';
 import { IFormState } from './interfacesAndTypes/interfaces';
 import { MovieStateType, MovieTypeTitleSearch } from './interfacesAndTypes/interfaces';
 
 function App() {
-  const [movies, setMovieState] = useState([
+  const initialMovieState = [
     {
       Title: '',
       Year: '',
@@ -15,8 +17,11 @@ function App() {
       Type: '',
       Poster: '',
     },
-  ]);
-  const [formState, setFormState] = useState<IFormState>({ Title: '', Year: '' });
+  ];
+  const initialFormState = { Title: '', Year: '' };
+
+  const [movies, setMovieState] = useState(initialMovieState);
+  const [formState, setFormState] = useState<IFormState>(initialFormState);
   const [errorState, setErrorState] = useState({
     error: false,
     msg: '',
@@ -35,15 +40,7 @@ function App() {
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setErrorState({ error: false, msg: '' });
-    setMovieState([
-      {
-        Title: '',
-        Year: '',
-        imdbID: '',
-        Type: '',
-        Poster: '',
-      },
-    ]);
+    setMovieState(initialMovieState);
 
     const result = await searchMoviesByTitle(formState.Title, formState.Year);
 
@@ -52,7 +49,7 @@ function App() {
     if (result.Response === 'False') {
       setErrorState({
         error: true,
-        msg: 'No movies found, please try again with a different search condition',
+        msg: 'No movies were found, please try again with a different search condition',
       });
     } else if (result.Response === 'True') {
       setMovieState(result.Search);
@@ -68,7 +65,8 @@ function App() {
         </p>
       </header>
       <div className="body">
-        <form className="Search-container" onSubmit={handleSubmit}>
+        <SearchForm submit={handleSubmit} change={handleOnChange} />
+        {/* <form className="Search-container" onSubmit={handleSubmit}>
           <label htmlFor="title">Title</label>
           <input
             id="title"
@@ -86,7 +84,7 @@ function App() {
           <button type="submit">
             Search<span className="star">&#9733;</span>
           </button>
-        </form>
+        </form> */}
 
         <div>
           <div className="Movie-card-container">
@@ -107,13 +105,7 @@ function App() {
           </div>
         </div>
         {errorState.error && <div className="Error-message">{errorState.msg}</div>}
-        <footer>
-          <p>
-            Movie search is made with React and Vite, using the{' '}
-            <a href="http://www.omdbapi.com/">OMDB API</a> . The source code can be found{' '}
-            <a href="https://github.com/MelindaSW/melindas-movies">here</a>.
-          </p>
-        </footer>
+        <Footer />
       </div>
     </div>
   );
