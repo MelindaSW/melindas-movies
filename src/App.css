@@ -30,6 +30,10 @@ p {
   margin: 20px 0px;
 }
 
+a {
+  color: white;
+}
+
 .header,
 .title {
   font-size: 3rem;
@@ -45,6 +49,9 @@ p {
   color: aliceblue;
   box-shadow: 13px -1px 54px 8px rgb(248, 248, 248);
   padding-bottom: 5px;
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
 }
 
 button,
@@ -102,6 +109,18 @@ ul {
   height: 100%;
 }
 
+.Error-message {
+  background-color: white;
+  border-radius: 10px;
+  color: darkred;
+  font-size: large;
+  font-weight: bolder;
+  padding: 20px;
+  margin-bottom: 50px;
+  width: 30%;
+  margin: 0px auto 50px auto;
+}
+
 footer {
   color: white;
   background-image: url(https://img.freepik.com/free-photo/movie-background-collage_23-2149876003.jpg);
@@ -111,11 +130,7 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.App-link {
-  color: #61dafb;
-  color: var(--link);
+  margin-top: auto;
 }
 
 /* @media (prefers-reduced-motion: no-preference) {
