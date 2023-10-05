@@ -109,6 +109,11 @@ ul {
   height: 100%;
 }
 
+.Movie-card-title {
+  width: 70%;
+  margin: auto;
+}
+
 .Error-message {
   background-color: white;
   border-radius: 10px;

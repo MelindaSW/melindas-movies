@@ -7,7 +7,7 @@ import { IFormState } from './interfacesAndTypes/interfaces';
 import { MovieStateType, MovieTypeTitleSearch } from './interfacesAndTypes/interfaces';
 
 function App() {
-  const [movies, setMovies] = useState([
+  const [movies, setMovieState] = useState([
     {
       Title: '',
       Year: '',
@@ -16,18 +16,35 @@ function App() {
       Poster: '',
     },
   ]);
-  const [formState, setFormState] = useState<IFormState>({ Title: 'Sta', Year: '' });
+  const [formState, setFormState] = useState<IFormState>({ Title: '', Year: '' });
   const [errorState, setErrorState] = useState({
     error: false,
-    msg: 'Something went wrong, please try again.',
+    msg: '',
   });
 
-  // const handleFormState = (event: FormEvent<HTMLFormElement>) => {
-  // };
+  const handleOnChange = (event: React.FormEvent<HTMLInputElement>) => {
+    const targetId = event.currentTarget.id;
+    const currentTargetValue: string = event.currentTarget.value;
+    setFormState({
+      Title: targetId === 'title' ? currentTargetValue : formState.Title,
+      Year: targetId === 'year' ? currentTargetValue : formState.Year,
+    });
+    console.log({ formState });
+  };
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    // Search movies
+    setErrorState({ error: false, msg: '' });
+    setMovieState([
+      {
+        Title: '',
+        Year: '',
+        imdbID: '',
+        Type: '',
+        Poster: '',
+      },
+    ]);
+
     const result = await searchMoviesByTitle(formState.Title, formState.Year);
 
     console.log('form submitted ✅', 'Response: ', result);
@@ -35,15 +52,12 @@ function App() {
     if (result.Response === 'False') {
       setErrorState({
         error: true,
-        msg: 'Something went wrong, please try again with another search condition',
+        msg: 'No movies found, please try again with a different search condition',
       });
     } else if (result.Response === 'True') {
-      setMovies(result.Search);
+      setMovieState(result.Search);
     }
   };
-  // check if response is false or true
-  // if true - update moviestate
-  // if false - display error message
 
   return (
     <div className="App">
@@ -56,10 +70,19 @@ function App() {
       <div className="body">
         <form className="Search-container" onSubmit={handleSubmit}>
           <label htmlFor="title">Title</label>
-          <input id="title" type="text" placeholder="Title" />
+          <input
+            id="title"
+            type="text"
+            placeholder="Title"
+            onChange={(e) => handleOnChange(e)}
+          />
           <label htmlFor="year">Year</label>
-          <input id="year" type="text" placeholder="Year" />
-          <label htmlFor="description">Description length</label>
+          <input
+            id="year"
+            type="text"
+            placeholder="Year"
+            onChange={(e) => handleOnChange(e)}
+          />
           <button type="submit">
             Search<span className="star">&#9733;</span>
           </button>
@@ -73,7 +96,7 @@ function App() {
                   <div className="Movie-card" key={m.imdbID}>
                     <li>
                       <img src={m.Poster} alt="poster" />
-                      <p>{m.Title}</p>
+                      <p className="Movie-card-title">{m.Title}</p>
                     </li>
                   </div>
                 ))

@@ -25,3 +25,5 @@ export interface MovieType {
   Poster: string;
 }
 export type MovieStateType = Array<MovieType>;
+
+export type ErrorType = { Response: string; Error: string };

@@ -1,4 +1,4 @@
-import { IMovieByTitleResponse } from '../interfacesAndTypes/interfaces';
+import { ErrorType, IMovieByTitleResponse } from '../interfacesAndTypes/interfaces';
 
 const searchMoviesByTitle = async (
   title: string,
