@@ -1,12 +1,14 @@
 import './App.css';
 
 import React, { FormEvent, useState } from 'react';
+import { Provider } from 'react-redux';
 
 import { searchMoviesByID, searchMoviesByTitle } from './apicalls/moviesapi';
 import Footer from './components/Footer/Footer';
 import SearchForm from './components/SearchForm/SearchForm';
 import { IFormState } from './interfacesAndTypes/interfaces';
 import { MovieStateType, MovieTypeTitleSearch } from './interfacesAndTypes/interfaces';
+import store from './redux/store';
 
 function App() {
   const initialMovieState = [
@@ -57,16 +59,17 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <p className="header">
-          <span className="star">&#9733;</span>Movie search
-          <span className="star">&#9733;</span>
-        </p>
-      </header>
-      <div className="body">
-        <SearchForm submit={handleSubmit} change={handleOnChange} />
-        {/* <form className="Search-container" onSubmit={handleSubmit}>
+    <Provider store={store}>
+      <div className="App">
+        <header className="App-header">
+          <p className="header">
+            <span className="star">&#9733;</span>Movie search
+            <span className="star">&#9733;</span>
+          </p>
+        </header>
+        <div className="body">
+          {/* <SearchForm submit={handleSubmit} change={handleOnChange} /> */}
+          {/* <form className="Search-container" onSubmit={handleSubmit}>
           <label htmlFor="title">Title</label>
           <input
             id="title"
@@ -86,28 +89,29 @@ function App() {
           </button>
         </form> */}
 
-        <div>
-          <div className="Movie-card-container">
-            <ul>
-              {movies[0].Title != '' ? (
-                movies.map((m) => (
-                  <div className="Movie-card" key={m.imdbID}>
-                    <li>
-                      <img src={m.Poster} alt="poster" />
-                      <p className="Movie-card-title">{m.Title}</p>
-                    </li>
-                  </div>
-                ))
-              ) : (
-                <></>
-              )}
-            </ul>
+          <div>
+            <div className="Movie-card-container">
+              <ul>
+                {movies[0].Title != '' ? (
+                  movies.map((m) => (
+                    <div className="Movie-card" key={m.imdbID}>
+                      <li>
+                        <img src={m.Poster} alt="poster" />
+                        <p className="Movie-card-title">{m.Title}</p>
+                      </li>
+                    </div>
+                  ))
+                ) : (
+                  <></>
+                )}
+              </ul>
+            </div>
           </div>
+          {errorState.error && <div className="Error-message">{errorState.msg}</div>}
+          <Footer />
         </div>
-        {errorState.error && <div className="Error-message">{errorState.msg}</div>}
-        <Footer />
       </div>
-    </div>
+    </Provider>
   );
 }
 
