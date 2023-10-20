@@ -3,7 +3,7 @@ import { IMovieByTitleResponse } from '../models/IMovieByTitleResponse';
 
 const searchMoviesByTitle = async (title: string, year: string) => {
   const moviesByTitle: IMovieByTitleResponse = {
-    search: [{ title: '', year: '', imdbID: '', type: '', poster: '' }],
+    search: [{ Title: '', Year: '', imdbID: '', Type: '', Poster: '' }],
     response: '',
     errorMessage: '',
   };
