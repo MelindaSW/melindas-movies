@@ -1,9 +1,13 @@
 import { configureStore } from '@reduxjs/toolkit';
 
-import movieReducer from '../redux/slices/movieSlice';
+import movieReducer from './slices/movieListSlice';
+import singleMovieReducer from './slices/singleMovieSlice';
 
 const store = configureStore({
   reducer: {
+    movies: movieReducer,
+    singleMovie: singleMovieReducer,
+
     // tasks: taskReducer,
   },
   middleware: (getDefaultMiddleware) =>

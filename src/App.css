@@ -77,15 +77,6 @@ button {
   margin-top: 1rem;
 }
 
-ul {
-  list-style: none;
-  margin-top: 100px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
 .Search-container {
   display: flex;
   flex-direction: column;
@@ -93,26 +84,6 @@ ul {
   padding-top: 5vh;
 }
 
-.Movie-card-container {
-  width: 100%;
-  font-size: large;
-}
-
-.Movie-card {
-  padding: 10px;
-  border: 1px dotted white;
-  margin: 10px;
-  background-color: #8392b3;
-  box-shadow: 4px 4px 30px -8px rgb(248, 248, 248);
-  border-radius: 10px;
-  color: aliceblue;
-  height: 100%;
-}
-
-.Movie-card-title {
-  width: 70%;
-  margin: auto;
-}
 
 .Error-message {
   background-color: white;
