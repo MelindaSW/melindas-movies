@@ -1,6 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
 
-// import taskReducer from '../features/tasks/taskSlice';
+import movieReducer from '../redux/slices/movieSlice';
 
 const store = configureStore({
   reducer: {
