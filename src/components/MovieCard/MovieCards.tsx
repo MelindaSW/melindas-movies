@@ -11,22 +11,20 @@ const MovieCards = () => {
   const movies = useAppSelector((state) => state.movies.movies);
 
   return (
-    <div className="Movie-card-container">
-      <ul>
-        {movies[0].Title != '' ? (
-          movies.map((m) => (
-            <div className="Movie-card" key={m.imdbID}>
-              <li>
-                <img src={m.Poster} alt="poster" />
-                <p className="Movie-card-title">{m.Title}</p>
-              </li>
+    <ul>
+      {movies[0].Title != '' ? (
+        movies.map((m, index) => (
+          <li key={index}>
+            <img src={m.Poster} alt="poster" />
+            <div className="Movie-card-title">
+              <span>{m.Title}</span>
             </div>
-          ))
-        ) : (
-          <></>
-        )}
-      </ul>
-    </div>
+          </li>
+        ))
+      ) : (
+        <></>
+      )}
+    </ul>
   );
 };
 

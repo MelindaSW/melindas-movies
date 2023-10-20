@@ -3,25 +3,12 @@ import './App.css';
 import React, { useEffect, useState } from 'react';
 import { Provider } from 'react-redux';
 
-import { searchMovieByID, searchMoviesByTitle } from './apicalls/moviesapi';
 import Footer from './components/Footer/Footer';
 import MovieCards from './components/MovieCard/MovieCards';
 import SearchForm from './components/SearchForm/SearchForm';
 import store from './redux/store';
 
 function App() {
-  // useEffect(() => {
-  //   const movies = searchMoviesByTitle('Star', '');
-  //   movies.then((res) => {
-  //     console.log(res);
-  //   });
-  //   const moviebyid = searchMovieByID('tt0076759');
-  //   moviebyid.then((res) => {
-  //     console.log(res);
-  //   });
-  //   console.log(moviebyid);
-  // }, []);
-
   return (
     <Provider store={store}>
       <div className="App">

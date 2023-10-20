@@ -1,29 +1,53 @@
 .Movie-card-container {
-    width: 100%;
-    font-size: large;
-  }
-  
-  .Movie-card {
-    padding: 10px;
-    border: 1px dotted white;
-    margin: 10px;
-    background-color: #8392b3;
-    box-shadow: 4px 4px 30px -8px rgb(248, 248, 248);
-    border-radius: 10px;
-    color: aliceblue;
-    height: 100%;
-  }
-  
-  .Movie-card-title {
-    width: 70%;
-    margin: auto;
-  }
-  
-  ul {
-    list-style: none;
-    margin-top: 100px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
+  /* width: 100%; */
+  font-size: large;
+}
+
+.Movie-card {
+  /* padding: 10px; */
+  border: 1px dotted white;
+  margin: 10px;
+  background-color: #8392b3;
+  box-shadow: 4px 4px 30px -8px rgb(248, 248, 248);
+  border-radius: 10px;
+  color: aliceblue;
+  height: 100%;
+}
+
+.Movie-card-title {
+  width: 70%;
+  margin: auto;
+}
+
+ul {
+  list-style: none;
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+li {
+  margin: 10px;
+  width: 300px;
+  border: 1px dotted white;
+}
+
+li:hover {
+  box-shadow: 4px 4px 30px -8px rgb(248, 248, 248);
+  transform: scale(1.1);
+  transition: all 0.4s ease;
+}
+
+.Movie-card-title {
+  background-color: #212125;
+  width: 300px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+
+.Movie-card-title > span {
+  width: 70%;
+  margin: auto;
+}

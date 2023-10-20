@@ -54,9 +54,7 @@ const SearchForm = () => {
         placeholder="Year"
         onChange={(e) => handleOnChange(e)}
       />
-      <button type="submit">
-        Search<span className="star">&#9733;</span>
-      </button>
+      <button type="submit">Search</button>
     </form>
   );
 };
