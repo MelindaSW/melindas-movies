@@ -1,0 +1,13 @@
+dialog {
+    /* background-color: aquamarine; */
+}
+
+dialog::backdrop {
+    /* filter: blur(3px); */
+    background: rgba(39, 36, 36, 0.705);
+}
+
+.modal-close-btn {
+    padding: 10px;
+    font-size: small;
+}

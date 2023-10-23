@@ -51,3 +51,8 @@ li:hover {
   width: 70%;
   margin: auto;
 }
+
+.imagebutton {
+  padding: 0px;
+  margin: auto
+}
