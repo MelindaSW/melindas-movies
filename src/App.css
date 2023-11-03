@@ -70,6 +70,11 @@ a {
   margin: 0px auto 50px auto;
 }
 
+@media screen and (max-width: 700px) {
+  .header {
+    font-size: 2rem;
+  }
+}
 /* footer {
   color: white;
   background-image: url(https://img.freepik.com/free-photo/movie-background-collage_23-2149876003.jpg);

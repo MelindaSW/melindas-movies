@@ -11,12 +11,30 @@
     margin-left: 20px;
 }
 
-.modalposter {
-}
-
 .modallist {
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
 
+@media screen and (max-width: 1000px) {
+    .contentcontainer {
+        display: block;
+        width: 500px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .contentcontainer {
+        display: block;
+        width: 400px;
+        text-align: center;
+    }
+    .infocontainer {
+        margin: auto;
+        text-align: left;
+    }
+    .modalposter {
+        margin: auto;
+    }
+}

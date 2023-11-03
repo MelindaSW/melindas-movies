@@ -9,7 +9,7 @@ interface ModalProps {
 }
 
 const Modal: React.FC<ModalProps> = ({ isOpen, hasCloseBtn, onClose, children }) => {
-  const modalRef: any= useRef(null);
+  const modalRef: any = useRef(null);
   const [isModalOpen, setModalOpen] = useState(isOpen);
 
   useEffect(() => {

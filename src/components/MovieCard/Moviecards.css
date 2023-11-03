@@ -61,3 +61,21 @@
   border-radius: 0px;
   font-size: 0%;
 }
+
+@media screen and (max-width: 800px) {
+  .movielist {
+    /* display: none; */
+    display:block;
+    padding: 0px;
+  }
+
+  .listitem {
+    margin: auto;
+    width: 400px;
+  }
+
+  .listitem > img {
+    width: 400px;
+  }
+  
+}
