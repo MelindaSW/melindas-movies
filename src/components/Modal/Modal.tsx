@@ -1,6 +1,6 @@
 import './Modal.css';
 
-import React, { FormEvent, useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 interface ModalProps {
   isOpen: boolean;
   hasCloseBtn?: boolean;
@@ -9,7 +9,7 @@ interface ModalProps {
 }
 
 const Modal: React.FC<ModalProps> = ({ isOpen, hasCloseBtn, onClose, children }) => {
-  const modalRef = useRef<HTMLDialogElement | null>(null);
+  const modalRef: any= useRef(null);
   const [isModalOpen, setModalOpen] = useState(isOpen);
 
   useEffect(() => {
