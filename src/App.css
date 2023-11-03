@@ -7,7 +7,7 @@
 
 .App {
   text-align: center;
-  background-color: #282c34;
+  background-color: #07142e;
 }
 
 .App-header {
@@ -45,9 +45,9 @@ a {
 
 .body {
   font-size: 0.9rem;
-  background-color: #282c34;
+  background-color: #041538;
   color: aliceblue;
-  box-shadow: 13px -1px 54px 8px rgb(248, 248, 248);
+  /* box-shadow: 13px -1px 54px 8px rgb(248, 248, 248); */
   padding-bottom: 5px;
   min-height: 60vh;
   display: flex;

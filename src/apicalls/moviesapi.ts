@@ -27,6 +27,7 @@ const searchMoviesByTitle = async (title: string, year: string) => {
 
 const searchMovieByID = async (id: string): Promise<IMovieByIdResponse> => {
   const movieByID: IMovieByIdResponse = {
+    title: '',
     response: '',
     errorMessage: '',
     actors: '',
@@ -47,6 +48,7 @@ const searchMovieByID = async (id: string): Promise<IMovieByIdResponse> => {
       }&i=${id}`,
     );
     const result = await fetchMovies.json();
+    movieByID.title = result.Title;
     movieByID.response = result.Response;
     movieByID.errorMessage = result.ErrorMessage;
     movieByID.actors = result.Actors;

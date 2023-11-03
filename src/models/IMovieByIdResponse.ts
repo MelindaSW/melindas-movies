@@ -1,4 +1,5 @@
 export interface IMovieByIdResponse {
+  title: string;
   response: string;
   errorMessage: string | null;
   actors: string;

@@ -1,5 +1,8 @@
 dialog {
     /* background-color: aquamarine; */
+    background-color: #041538;
+    border: 1px dotted white;
+    padding: 40px;
 }
 
 dialog::backdrop {
@@ -10,4 +13,7 @@ dialog::backdrop {
 .modal-close-btn {
     padding: 10px;
     font-size: small;
+    position: absolute;
+    right: 40px;
+    bottom: 40px;
 }

@@ -1,0 +1,22 @@
+.contentcontainer {
+    width: 900px;
+    display: flex;
+    flex-direction:row;
+    background-color: #041538;
+    color: whitesmoke;
+    text-align: left;
+}
+
+.infocontainer {
+    margin-left: 20px;
+}
+
+.modalposter {
+}
+
+.modallist {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+

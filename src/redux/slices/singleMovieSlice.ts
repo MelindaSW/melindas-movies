@@ -21,12 +21,12 @@ type NewMoviePayload = {
 };
 
 // Define a type for the slice state
-interface ErrorState {
+interface SingleMovieState {
   movie: Movie;
 }
 
 // Define the initial state using that type
-const initialState: ErrorState = {
+const initialState: SingleMovieState = {
   movie: {
     title: '',
     actors: '',
@@ -46,13 +46,13 @@ export const singleMovieSlice = createSlice({
   name: 'singleMovie',
   initialState,
   reducers: {
-    updateSelectedMovie: (state, action: PayloadAction<NewMoviePayload>) => {
+    setMovie: (state, action: PayloadAction<NewMoviePayload>) => {
       state.movie = action.payload.movie;
     },
   },
 });
 
-export const { updateSelectedMovie } = singleMovieSlice.actions;
+export const { setMovie } = singleMovieSlice.actions;
 
 export const selectMovie = (state: RootState) => state.singleMovie;
 

@@ -46,7 +46,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, hasCloseBtn, onClose, children })
 
       {hasCloseBtn && (
         <button className="modal-close-btn" onClick={handleCloseModal}>
-          x
+          CLOSE
         </button>
       )}
     </dialog>
