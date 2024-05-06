@@ -7,7 +7,7 @@
 
 .App {
   text-align: center;
-  background-color: #282c34;
+  background-color: #07142e;
 }
 
 .App-header {
@@ -45,13 +45,17 @@ a {
 
 .body {
   font-size: 0.9rem;
-  background-color: #282c34;
+  background-color: #041538;
   color: aliceblue;
-  box-shadow: 13px -1px 54px 8px rgb(248, 248, 248);
+  /* box-shadow: 13px -1px 54px 8px rgb(248, 248, 248); */
   padding-bottom: 5px;
   min-height: 60vh;
   display: flex;
   flex-direction: column;
+}
+
+.body.modal-open {
+  overflow: hidden; /* see "modal-open" in Modal.tsx */
 }
 
 .Error-message {
@@ -66,6 +70,11 @@ a {
   margin: 0px auto 50px auto;
 }
 
+@media screen and (max-width: 700px) {
+  .header {
+    font-size: 2rem;
+  }
+}
 /* footer {
   color: white;
   background-image: url(https://img.freepik.com/free-photo/movie-background-collage_23-2149876003.jpg);

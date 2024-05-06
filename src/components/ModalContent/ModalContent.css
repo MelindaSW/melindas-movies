@@ -1,0 +1,40 @@
+.contentcontainer {
+    width: 900px;
+    display: flex;
+    flex-direction:row;
+    background-color: #041538;
+    color: whitesmoke;
+    text-align: left;
+}
+
+.infocontainer {
+    margin-left: 20px;
+}
+
+.modallist {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+@media screen and (max-width: 1000px) {
+    .contentcontainer {
+        display: block;
+        width: 500px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .contentcontainer {
+        display: block;
+        width: 400px;
+        text-align: center;
+    }
+    .infocontainer {
+        margin: auto;
+        text-align: left;
+    }
+    .modalposter {
+        margin: auto;
+    }
+}

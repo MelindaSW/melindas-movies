@@ -19,7 +19,7 @@
   margin: auto;
 }
 
-ul {
+.movielist {
   list-style: none;
   margin-top: 100px;
   display: flex;
@@ -28,15 +28,15 @@ ul {
   flex-wrap: wrap;
 }
 
-li {
+.listitem {
   margin: 10px;
   width: 300px;
-  border: 1px dotted white;
+  /* border: 1px dotted white; */
 }
 
-li:hover {
+.listitem:hover {
   box-shadow: 4px 4px 30px -8px rgb(248, 248, 248);
-  transform: scale(1.1);
+  transform: scale(1.05);
   transition: all 0.4s ease;
 }
 
@@ -50,4 +50,32 @@ li:hover {
 .Movie-card-title > span {
   width: 70%;
   margin: auto;
+}
+
+.imagebutton {
+  padding: 0px;
+  margin: auto;
+  background-color: #041538;
+  cursor: pointer;
+  box-shadow: none;
+  border-radius: 0px;
+  font-size: 0%;
+}
+
+@media screen and (max-width: 800px) {
+  .movielist {
+    /* display: none; */
+    display:block;
+    padding: 0px;
+  }
+
+  .listitem {
+    margin: auto;
+    width: 400px;
+  }
+
+  .listitem > img {
+    width: 400px;
+  }
+  
 }

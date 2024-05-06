@@ -1,0 +1,30 @@
+dialog {
+    /* background-color: aquamarine; */
+    background-color: #041538;
+    border: 1px dotted white;
+    padding: 40px;
+}
+
+dialog::backdrop {
+    /* filter: blur(3px); */
+    background: rgba(39, 36, 36, 0.705);
+}
+
+.modal-close-btn {
+    padding: 10px;
+    font-size: small;
+    position: absolute;
+    right: 40px;
+    bottom: 40px;
+}
+
+@media screen and (max-width: 1000px) {
+    dialog {
+        padding: 5px;
+    }
+    .modal-close-btn{
+        right: 10px;
+        bottom: 10px;
+        margin: 0px;
+    }
+}
